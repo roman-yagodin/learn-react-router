@@ -1,4 +1,4 @@
-import {Outlet, Link} from 'react-router-dom';
+import {Outlet, NavLink} from 'react-router-dom';
 import dataBook from '../data/data';
 
 export default function Catalog() {
@@ -7,9 +7,16 @@ export default function Catalog() {
             <h2>Каталог</h2>
             {dataBook.map(book => (
                 <>
-                    <Link to={`/catalog/${book.id}`}>
+                    <NavLink to={`/catalog/${book.id}`}
+                        style={({isActive}) => {
+                            return {
+                                color: isActive ? "#369" : "",
+                                fontWeight: isActive ? "bold" : "normal"       
+                            };
+                        }}
+                    >
                         {book.title}
-                    </Link> | { ' ' }
+                    </NavLink> { ' ' }
                 </>
             ))}
             <Outlet />
