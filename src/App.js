@@ -1,9 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import {Link} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
+      <h1>Bookkeeper!</h1>
+      <nav>
+        <Link to="/catalog">Каталог</Link> | { ' ' }
+        <Link to="/basket">Корзина</Link> | { ' ' }
+        <Link to="/about">О нас</Link>
+      </nav>
+
+      {/*
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,6 +27,8 @@ function App() {
           Learn React
         </a>
       </header>
+      */}
+
     </div>
   );
 }
