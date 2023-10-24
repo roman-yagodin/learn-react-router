@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Link} from 'react-router-dom';
+import {Outlet, Link} from 'react-router-dom';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <Link to="/basket">Корзина</Link> | { ' ' }
         <Link to="/about">О нас</Link>
       </nav>
+      <Outlet />
 
       {/*
       <header className="App-header">
