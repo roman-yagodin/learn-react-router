@@ -1,11 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import {Outlet, Link} from 'react-router-dom';
+import {Fade} from './etc/Fade';
+import {useState} from 'react';
 
 function App() {
+
+  const [isIn, setIsIn] = useState(true);
+
   return (
     <div className="App">
       <h1>Bookkeeper!</h1>
+
+      <Fade in={isIn}/>
+      <button onClick={() => setIsIn(!isIn)}>Нажми меня!</button>
+
       <nav>
         <Link to="/catalog">Каталог</Link> | { ' ' }
         <Link to="/basket">Корзина</Link> | { ' ' }
