@@ -4,6 +4,7 @@ import {Outlet, Link} from 'react-router-dom';
 import {Fade} from './etc/Fade';
 import {useState} from 'react';
 import {CSSTransition, SwitchTransition} from 'react-transition-group';
+import {Motion, spring} from 'react-motion';
 
 function App() {
 
@@ -16,6 +17,10 @@ function App() {
   return (
     <div className="App">
       <h1>Bookkeeper!</h1>
+
+      <Motion defaultStyle={{x: 0}} style={{x: spring(1000)}}>
+          {value => <div>{value.x.toFixed()}</div>}
+      </Motion>
 
       <SwitchTransition mode="out-in">
         <CSSTransition
