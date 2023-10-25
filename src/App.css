@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+/* CSSTransition */
+/* из документации - transition должно быть только на *-active классах */
+/* от себя - my-exit-done/my-enter-done симметрично my-enter/my-exit */
+
+.my-enter {
+  opacity: 0;
+}
+.my-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.my-enter-done {
+  opacity: 1;
+}
+.my-exit {
+  opacity: 1;
+}
+.my-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+.my-exit-done {
+  opacity: 0;
+}

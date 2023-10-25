@@ -3,14 +3,24 @@ import './App.css';
 import {Outlet, Link} from 'react-router-dom';
 import {Fade} from './etc/Fade';
 import {useState} from 'react';
+import {CSSTransition} from 'react-transition-group';
 
 function App() {
 
   const [isIn, setIsIn] = useState(true);
 
+  const [inProp, setInProp] = useState(true);
+
   return (
     <div className="App">
       <h1>Bookkeeper!</h1>
+
+      <CSSTransition in={inProp} timeout={1000} classNames="my">
+        <div>
+          Привет, мир! from CSSTransition
+        </div>
+      </CSSTransition>
+      <button onClick={() => setInProp(!inProp)}>CSSTransition</button>
 
       <Fade in={isIn}/>
       <button onClick={() => setIsIn(!isIn)}>Нажми меня!</button>
